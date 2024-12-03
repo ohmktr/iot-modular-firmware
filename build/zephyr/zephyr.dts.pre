@@ -5261,16 +5261,16 @@ arduino_i2c: &i2c1 {};
 / {
  leds: leds {
   compatible = "gpio-leds";
-  green_led_1: led_1 {
+  led1: led_1 {
    gpios = <&gpioc 0 (0 << 0)>;
    label = "User LD1";
   };
-  yellow_led_1: led_2 {
-   gpios = <&gpiof 4 (0 << 0)>;
+  led2: led_2 {
+   gpios = <&gpioc 1 (0 << 0)>;
    label = "User LD2";
   };
-  red_led_1: led_3 {
-   gpios = <&gpiog 4 (0 << 0)>;
+  buzzer: buzzer_1 {
+   gpios = <&gpioa 15 (1 << 0)>;
    label = "User LD3";
   };
  };
@@ -5493,7 +5493,9 @@ stm32_lp_tick_source: &lptim4 {
  };
 
  aliases {
-  led0 = &green_led_1;
+  led0 = &led1;
+  led1 = &led2;
+  buzzer = &buzzer;
   sw0 = &user_button;
   watchdog0 = &iwdg;
   pwm-led0 = &pwm_led_1;

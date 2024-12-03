@@ -4,4 +4,15 @@ cmake_minimum_required(VERSION 3.20.0)
 find_package(Zephyr REQUIRED HINTS $ENV{ZEPHYR_BASE})
 project(dev_space)
 
-target_sources(app PRIVATE src/main.c)
+# เพิ่ม source files ที่ต้องการเข้าไปใน target
+target_sources(app PRIVATE 
+    src/main/main.c         # Main application source
+    src/components/buzzer.c # Buzzer source file
+    src/components/led.c    # LED source file
+    src/components/led1.c
+)
+
+# เพิ่ม include directory ของ components
+zephyr_include_directories(src/components)
+
+# SPDX-License-Identifier: Apache-2.0

@@ -16,7 +16,9 @@
 		zephyr,canbus = &fdcan1;
 	};
 	aliases {
-		led0 = &green_led_1;
+		led0 = &led1;
+		led1 = &led2;
+		buzzer = &buzzer;
 		sw0 = &user_button;
 		watchdog0 = &iwdg;
 		pwm-led0 = &pwm_led_1;
@@ -1243,16 +1245,16 @@
 	};
 	leds: leds {
 		compatible = "gpio-leds";
-		green_led_1: led_1 {
+		led1: led_1 {
 			gpios = < &gpioc 0x0 0x0 >;
 			label = "User LD1";
 		};
-		yellow_led_1: led_2 {
-			gpios = < &gpiof 0x4 0x0 >;
+		led2: led_2 {
+			gpios = < &gpioc 0x1 0x0 >;
 			label = "User LD2";
 		};
-		red_led_1: led_3 {
-			gpios = < &gpiog 0x4 0x0 >;
+		buzzer: buzzer_1 {
+			gpios = < &gpioa 0xf 0x1 >;
 			label = "User LD3";
 		};
 	};
