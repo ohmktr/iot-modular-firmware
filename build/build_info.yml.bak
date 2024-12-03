@@ -1,0 +1,4 @@
+west:
+  command: C:\deviot\zephyrproject\.venv\Scripts\west build -b nucleo_h563zi
+  topdir: C:\deviot\zephyrproject
+  version: 1.3.0

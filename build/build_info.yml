@@ -1,0 +1,50 @@
+cmake:
+  application:
+    configuration-dir: C:/deviot/dev_space
+    source-dir: C:/deviot/dev_space
+  board:
+    name: nucleo_h563zi
+    qualifiers: stm32h563xx
+    revision: 
+  devicetree:
+    bindings-dirs:
+     - C:/deviot/zephyrproject/zephyr/dts/bindings
+    files:
+     - C:/deviot/zephyrproject/zephyr/boards/st/nucleo_h563zi/nucleo_h563zi.dts
+    include-dirs:
+     - C:/deviot/zephyrproject/modules/hal/atmel/include
+     - C:/deviot/zephyrproject/modules/hal/gigadevice/include
+     - C:/deviot/zephyrproject/modules/hal/microchip/dts
+     - C:/deviot/zephyrproject/modules/hal/nuvoton/dts
+     - C:/deviot/zephyrproject/modules/hal/nxp/dts
+     - C:/deviot/zephyrproject/modules/hal/stm32/dts
+     - C:/deviot/zephyrproject/zephyr/include
+     - C:/deviot/zephyrproject/zephyr/include/zephyr
+     - C:/deviot/zephyrproject/zephyr/dts/common
+     - C:/deviot/zephyrproject/zephyr/dts/x86
+     - C:/deviot/zephyrproject/zephyr/dts/xtensa
+     - C:/deviot/zephyrproject/zephyr/dts/sparc
+     - C:/deviot/zephyrproject/zephyr/dts/riscv
+     - C:/deviot/zephyrproject/zephyr/dts/posix
+     - C:/deviot/zephyrproject/zephyr/dts/nios2
+     - C:/deviot/zephyrproject/zephyr/dts/arm64
+     - C:/deviot/zephyrproject/zephyr/dts/arm
+     - C:/deviot/zephyrproject/zephyr/dts/arc
+     - C:/deviot/zephyrproject/zephyr/dts
+  kconfig:
+    files:
+     - C:/deviot/zephyrproject/zephyr/boards/st/nucleo_h563zi/nucleo_h563zi_defconfig
+     - C:/deviot/dev_space/prj.conf
+    user-files:
+     - C:/deviot/dev_space/prj.conf
+  toolchain:
+    name: zephyr
+    path: C:/Users/exito/zephyr-sdk-0.17.0
+  zephyr:
+    version: 4.0.99
+    zephyr-base: C:/deviot/zephyrproject/zephyr
+version: 0.1.0
+west:
+  command: C:\deviot\zephyrproject\.venv\Scripts\west build -b nucleo_h563zi
+  topdir: C:\deviot\zephyrproject
+  version: 1.3.0
