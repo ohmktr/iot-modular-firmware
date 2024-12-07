@@ -308,6 +308,7 @@ C:/deviot/dev_space/build/modules/percepio/CMakeFiles/edit_cache.dir
 C:/deviot/dev_space/build/modules/percepio/CMakeFiles/rebuild_cache.dir
 C:/deviot/dev_space/build/modules/picolibc/CMakeFiles/edit_cache.dir
 C:/deviot/dev_space/build/modules/picolibc/CMakeFiles/rebuild_cache.dir
+C:/deviot/dev_space/build/modules/segger/CMakeFiles/modules__segger.dir
 C:/deviot/dev_space/build/modules/segger/CMakeFiles/edit_cache.dir
 C:/deviot/dev_space/build/modules/segger/CMakeFiles/rebuild_cache.dir
 C:/deviot/dev_space/build/modules/tinycrypt/CMakeFiles/edit_cache.dir

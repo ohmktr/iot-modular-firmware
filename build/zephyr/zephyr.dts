@@ -19,6 +19,9 @@
 		led0 = &led1;
 		led1 = &led2;
 		buzzer = &buzzer;
+		vcclora = &vcc_lora;
+		pulluploratx = &lora_pullup_tx;
+		pulluplorarx = &lora_pullup_rx;
 		sw0 = &user_button;
 		watchdog0 = &iwdg;
 		pwm-led0 = &pwm_led_1;
@@ -92,7 +95,7 @@
 				power-state-name = "suspend-to-idle";
 				substate-id = < 0x1 >;
 				min-residency-us = < 0x14 >;
-				phandle = < 0x22 >;
+				phandle = < 0x26 >;
 			};
 		};
 		rcc: rcc@44020c00 {
@@ -135,7 +138,7 @@
 				#gpio-cells = < 0x2 >;
 				reg = < 0x42020000 0x400 >;
 				clocks = < &rcc 0x8c 0x1 >;
-				phandle = < 0x29 >;
+				phandle = < 0x2d >;
 			};
 			gpiob: gpio@42020400 {
 				compatible = "st,stm32-gpio";
@@ -143,7 +146,7 @@
 				#gpio-cells = < 0x2 >;
 				reg = < 0x42020400 0x400 >;
 				clocks = < &rcc 0x8c 0x2 >;
-				phandle = < 0x2b >;
+				phandle = < 0x2f >;
 			};
 			gpioc: gpio@42020800 {
 				compatible = "st,stm32-gpio";
@@ -151,7 +154,7 @@
 				#gpio-cells = < 0x2 >;
 				reg = < 0x42020800 0x400 >;
 				clocks = < &rcc 0x8c 0x4 >;
-				phandle = < 0x2a >;
+				phandle = < 0x2e >;
 			};
 			gpiod: gpio@42020c00 {
 				compatible = "st,stm32-gpio";
@@ -167,7 +170,7 @@
 				#gpio-cells = < 0x2 >;
 				reg = < 0x42021c00 0x400 >;
 				clocks = < &rcc 0x8c 0x80 >;
-				phandle = < 0x2f >;
+				phandle = < 0x33 >;
 			};
 			gpioe: gpio@42021000 {
 				compatible = "st,stm32-gpio";
@@ -175,7 +178,7 @@
 				#gpio-cells = < 0x2 >;
 				reg = < 0x42021000 0x400 >;
 				clocks = < &rcc 0x8c 0x10 >;
-				phandle = < 0x2e >;
+				phandle = < 0x32 >;
 			};
 			gpiof: gpio@42021400 {
 				compatible = "st,stm32-gpio";
@@ -183,7 +186,7 @@
 				#gpio-cells = < 0x2 >;
 				reg = < 0x42021400 0x400 >;
 				clocks = < &rcc 0x8c 0x20 >;
-				phandle = < 0x2c >;
+				phandle = < 0x30 >;
 			};
 			gpiog: gpio@42021800 {
 				compatible = "st,stm32-gpio";
@@ -191,7 +194,7 @@
 				#gpio-cells = < 0x2 >;
 				reg = < 0x42021800 0x400 >;
 				clocks = < &rcc 0x8c 0x40 >;
-				phandle = < 0x2d >;
+				phandle = < 0x31 >;
 			};
 			gpioi: gpio@42022000 {
 				compatible = "st,stm32-gpio";
@@ -305,15 +308,32 @@
 				pinmux = < 0x727 >;
 				phandle = < 0x6 >;
 			};
+			uart4_rx_pc11: uart4_rx_pc11 {
+				pinmux = < 0x568 >;
+				phandle = < 0x23 >;
+			};
+			usart6_rx_pc7: usart6_rx_pc7 {
+				pinmux = < 0x4e7 >;
+				phandle = < 0x25 >;
+			};
 			lpuart1_tx_pb6: lpuart1_tx_pb6 {
 				pinmux = < 0x2c8 >;
 				bias-pull-up;
 				phandle = < 0x7 >;
 			};
-			usart3_tx_pd8: usart3_tx_pd8 {
-				pinmux = < 0x707 >;
-				bias-pull-up;
+			usart3_tx_pb10: usart3_tx_pb10 {
+				pinmux = < 0x347 >;
 				phandle = < 0x5 >;
+			};
+			uart4_tx_pc10: uart4_tx_pc10 {
+				pinmux = < 0x548 >;
+				bias-pull-up;
+				phandle = < 0x22 >;
+			};
+			usart6_tx_pc6: usart6_tx_pc6 {
+				pinmux = < 0x4c7 >;
+				bias-pull-up;
+				phandle = < 0x24 >;
 			};
 			usb_dm_pa11: usb_dm_pa11 {
 				pinmux = < 0x16a >;
@@ -367,9 +387,9 @@
 			resets = < &rctl 0xe92 >;
 			interrupts = < 0x3c 0x0 >;
 			status = "okay";
-			pinctrl-0 = < &usart3_tx_pd8 &usart3_rx_pd9 >;
+			pinctrl-0 = < &usart3_tx_pb10 &usart3_rx_pd9 >;
 			pinctrl-names = "default";
-			current-speed = < 0x1c200 >;
+			current-speed = < 0x2580 >;
 		};
 		lpuart1: arduino_serial: serial@44002400 {
 			compatible = "st,stm32-lpuart", "st,stm32-uart";
@@ -418,7 +438,7 @@
 			pinctrl-names = "default";
 			st,adc-clock-source = < 0x2 >;
 			st,adc-prescaler = < 0x6 >;
-			phandle = < 0x24 >;
+			phandle = < 0x28 >;
 		};
 		rtc: rtc@44007800 {
 			compatible = "st,stm32-rtc";
@@ -477,7 +497,7 @@
 				#pwm-cells = < 0x3 >;
 				pinctrl-0 = < &tim3_ch3_pb0 >;
 				pinctrl-names = "default";
-				phandle = < 0x30 >;
+				phandle = < 0x34 >;
 			};
 			counter {
 				compatible = "st,stm32-counter";
@@ -532,7 +552,7 @@
 			status = "okay";
 			pinctrl-0 = < &i2c1_scl_pb8 &i2c1_sda_pb9 >;
 			pinctrl-names = "default";
-			phandle = < 0x25 >;
+			phandle = < 0x29 >;
 		};
 		i2c2: i2c@40005800 {
 			compatible = "st,stm32-i2c-v2";
@@ -544,7 +564,7 @@
 			interrupts = < 0x35 0x0 >, < 0x36 0x0 >;
 			interrupt-names = "event", "error";
 			status = "disabled";
-			phandle = < 0x26 >;
+			phandle = < 0x2a >;
 		};
 		spi1: arduino_spi: spi@40013000 {
 			compatible = "st,stm32h7-spi", "st,stm32-spi-fifo", "st,stm32-spi";
@@ -759,7 +779,10 @@
 			clocks = < &rcc 0x9c 0x80000 >;
 			resets = < &rctl 0xe93 >;
 			interrupts = < 0x3d 0x0 >;
-			status = "disabled";
+			status = "okay";
+			pinctrl-0 = < &uart4_tx_pc10 &uart4_rx_pc11 >;
+			pinctrl-names = "default";
+			current-speed = < 0x2580 >;
 		};
 		uart5: serial@40005000 {
 			compatible = "st,stm32-uart";
@@ -799,7 +822,10 @@
 			clocks = < &rcc 0x9c 0x2000000 >;
 			resets = < &rctl 0xe99 >;
 			interrupts = < 0x55 0x0 >;
-			status = "disabled";
+			status = "okay";
+			pinctrl-0 = < &usart6_tx_pc6 &usart6_rx_pc7 >;
+			pinctrl-names = "default";
+			current-speed = < 0x2580 >;
 		};
 		usart10: serial@40006800 {
 			compatible = "st,stm32-usart", "st,stm32-uart";
@@ -835,7 +861,7 @@
 			interrupts = < 0x50 0x0 >, < 0x51 0x0 >;
 			interrupt-names = "event", "error";
 			status = "disabled";
-			phandle = < 0x27 >;
+			phandle = < 0x2b >;
 		};
 		i2c4: i2c@44002c00 {
 			compatible = "st,stm32-i2c-v2";
@@ -847,7 +873,7 @@
 			interrupts = < 0x7d 0x0 >, < 0x7e 0x0 >;
 			interrupt-names = "event", "error";
 			status = "disabled";
-			phandle = < 0x28 >;
+			phandle = < 0x2c >;
 		};
 		spi4: spi@40014c00 {
 			compatible = "st,stm32h7-spi", "st,stm32-spi-fifo", "st,stm32-spi";
@@ -1105,7 +1131,7 @@
 			compatible = "st,stm32-hse-clock";
 			status = "okay";
 			clock-frequency = < 0x17d7840 >;
-			phandle = < 0x23 >;
+			phandle = < 0x27 >;
 		};
 		clk_hsi: clk-hsi {
 			#clock-cells = < 0x0 >;
@@ -1256,6 +1282,18 @@
 		buzzer: buzzer_1 {
 			gpios = < &gpioa 0xf 0x1 >;
 			label = "User LD3";
+		};
+		vcc_lora: vcc_lora {
+			gpios = < &gpiob 0xc 0x0 >;
+			label = "user_vcc_lora";
+		};
+		lora_pullup_tx: lora_pullup_tx {
+			gpios = < &gpiob 0xd 0x0 >;
+			label = "pullup_lora_tx";
+		};
+		lora_pullup_rx: lora_pullup_rx {
+			gpios = < &gpiob 0xe 0x1 >;
+			label = "pullup_lora_rx";
 		};
 	};
 	gpio_keys {

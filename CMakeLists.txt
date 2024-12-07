@@ -10,6 +10,8 @@ target_sources(app PRIVATE
     src/components/buzzer.c # Buzzer source file
     src/components/led.c    # LED source file
     src/components/led1.c
+    src/components/uart_com.c
+    src/application/protocol_check.c
 )
 
 # เพิ่ม include directory ของ components

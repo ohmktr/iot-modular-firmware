@@ -68,6 +68,7 @@ linker.cmd: \
  C:/deviot/zephyrproject/zephyr/include/zephyr/linker/kobject-rom.ld \
  C:/deviot/zephyrproject/zephyr/include/zephyr/linker/cplusplus-rom.ld \
  C:/deviot/dev_space/build/zephyr/include/generated/snippets-ram-sections.ld \
+ c:\deviot\zephyrproject\zephyr\modules\segger\segger_rtt.ld \
  c:\deviot\zephyrproject\zephyr\arch\common\ramfunc.ld \
  C:/deviot/dev_space/build/zephyr/include/generated/snippets-ramfunc-section.ld \
  C:/deviot/dev_space/build/zephyr/include/generated/snippets-rwdata.ld \
