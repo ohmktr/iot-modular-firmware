@@ -6,8 +6,9 @@
 #include <zephyr/drivers/uart.h>
 
 /* ประกาศตัวแปร rx_buffer ให้เป็น global */
-#define MSG_SIZE 64
+#define MSG_SIZE 256
 extern char rx_buffer[MSG_SIZE]; 
+extern bool message_ready;
 
 
 // ฟังก์ชันสำหรับส่งคำสั่ง AT Command
