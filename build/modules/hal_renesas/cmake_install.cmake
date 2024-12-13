@@ -39,11 +39,11 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/deviot/dev_space/build/modules/hal_renesas/zephyr/cmake_install.cmake")
+  include("C:/deviot/zephyrproject/dev_space/build/modules/hal_renesas/zephyr/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/deviot/dev_space/build/modules/hal_renesas/drivers/cmake_install.cmake")
+  include("C:/deviot/zephyrproject/dev_space/build/modules/hal_renesas/drivers/cmake_install.cmake")
 endif()
 

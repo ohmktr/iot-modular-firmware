@@ -1,7 +1,7 @@
 cmake:
   application:
-    configuration-dir: C:/deviot/dev_space
-    source-dir: C:/deviot/dev_space
+    configuration-dir: C:/deviot/zephyrproject/dev_space
+    source-dir: C:/deviot/zephyrproject/dev_space
   board:
     name: nucleo_h563zi
     qualifiers: stm32h563xx
@@ -34,9 +34,9 @@ cmake:
   kconfig:
     files:
      - C:/deviot/zephyrproject/zephyr/boards/st/nucleo_h563zi/nucleo_h563zi_defconfig
-     - C:/deviot/dev_space/prj.conf
+     - C:/deviot/zephyrproject/dev_space/prj.conf
     user-files:
-     - C:/deviot/dev_space/prj.conf
+     - C:/deviot/zephyrproject/dev_space/prj.conf
   toolchain:
     name: zephyr
     path: C:/Users/exito/zephyr-sdk-0.17.0

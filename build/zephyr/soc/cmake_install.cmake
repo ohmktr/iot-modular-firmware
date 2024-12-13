@@ -39,11 +39,11 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/deviot/dev_space/build/zephyr/soc/common/cmake_install.cmake")
+  include("C:/deviot/zephyrproject/dev_space/build/zephyr/soc/common/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/deviot/dev_space/build/zephyr/soc/soc/stm32h563xx/cmake_install.cmake")
+  include("C:/deviot/zephyrproject/dev_space/build/zephyr/soc/soc/stm32h563xx/cmake_install.cmake")
 endif()
 

@@ -39,16 +39,16 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/deviot/dev_space/build/zephyr/arch/arch/arm/core/cortex_m/cmake_install.cmake")
+  include("C:/deviot/zephyrproject/dev_space/build/zephyr/arch/arch/arm/core/cortex_m/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/deviot/dev_space/build/zephyr/arch/arch/arm/core/cortex_m/cmse/cmake_install.cmake")
+  include("C:/deviot/zephyrproject/dev_space/build/zephyr/arch/arch/arm/core/cortex_m/cmse/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/deviot/dev_space/build/zephyr/arch/arch/arm/core/mpu/cmake_install.cmake")
+  include("C:/deviot/zephyrproject/dev_space/build/zephyr/arch/arch/arm/core/mpu/cmake_install.cmake")
 endif()
 

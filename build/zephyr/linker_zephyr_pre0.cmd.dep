@@ -1,12 +1,12 @@
 linker_zephyr_pre0.cmd: \
  C:/deviot/zephyrproject/zephyr/include/zephyr/arch/arm/cortex_m/scripts/linker.ld \
- C:/deviot/dev_space/build/zephyr/include/generated/zephyr/autoconf.h \
+ C:/deviot/zephyrproject/dev_space/build/zephyr/include/generated/zephyr/autoconf.h \
  C:/deviot/zephyrproject/zephyr/include/zephyr/linker/sections.h \
  C:/deviot/zephyrproject/zephyr/include/zephyr/linker/section_tags.h \
  C:/deviot/zephyrproject/zephyr/include/zephyr/toolchain.h \
  C:/deviot/zephyrproject/zephyr/include/zephyr/toolchain/gcc.h \
  C:/deviot/zephyrproject/zephyr/include/zephyr/devicetree.h \
- C:/deviot/dev_space/build/zephyr/include/generated/zephyr/devicetree_generated.h \
+ C:/deviot/zephyrproject/dev_space/build/zephyr/include/generated/zephyr/devicetree_generated.h \
  C:/deviot/zephyrproject/zephyr/include/zephyr/irq_multilevel.h \
  C:/deviot/zephyrproject/zephyr/include/zephyr/sys/util.h \
  C:/deviot/zephyrproject/zephyr/include/zephyr/sys/util_macro.h \
@@ -33,14 +33,14 @@ linker_zephyr_pre0.cmd: \
  C:/deviot/zephyrproject/zephyr/include/zephyr/linker/devicetree_regions.h \
  C:/deviot/zephyrproject/zephyr/include/zephyr/linker/linker-defs.h \
  C:/deviot/zephyrproject/zephyr/include/zephyr/toolchain/common.h \
- C:/deviot/dev_space/build/zephyr/include/generated/zephyr/offsets.h \
+ C:/deviot/zephyrproject/dev_space/build/zephyr/include/generated/zephyr/offsets.h \
  C:/deviot/zephyrproject/zephyr/include/zephyr/linker/linker-tool.h \
  C:/deviot/zephyrproject/zephyr/include/zephyr/linker/linker-tool-gcc.h \
  C:/deviot/zephyrproject/zephyr/include/zephyr/kernel/mm.h \
  C:/deviot/zephyrproject/zephyr/include/zephyr/kernel/internal/mm.h \
  C:/deviot/zephyrproject/zephyr/include/zephyr/linker/linker-devnull.h \
  C:/deviot/zephyrproject/zephyr/include/zephyr/linker/rel-sections.ld \
- C:/deviot/dev_space/build/zephyr/include/generated/snippets-rom-start.ld \
+ C:/deviot/zephyrproject/dev_space/build/zephyr/include/generated/snippets-rom-start.ld \
  c:\deviot\zephyrproject\zephyr\arch\common\rom_start_address.ld \
  c:\deviot\zephyrproject\zephyr\arch\common\fill_with_zeros.ld \
  c:\deviot\zephyrproject\zephyr\arch\common\rom_start_offset.ld \
@@ -52,7 +52,7 @@ linker_zephyr_pre0.cmd: \
  C:/deviot/zephyrproject/zephyr/include/zephyr/linker/common-rom/common-rom-kernel-devices.ld \
  C:/deviot/zephyrproject/zephyr/include/zephyr/linker/iterable_sections.h \
  C:/deviot/zephyrproject/zephyr/include/zephyr/linker/device-deps.ld \
- C:/deviot/dev_space/build/zephyr/include/generated/device-api-sections.ld \
+ C:/deviot/zephyrproject/dev_space/build/zephyr/include/generated/device-api-sections.ld \
  C:/deviot/zephyrproject/zephyr/include/zephyr/linker/common-rom/common-rom-ztest.ld \
  C:/deviot/zephyrproject/zephyr/include/zephyr/linker/common-rom/common-rom-init.ld \
  C:/deviot/zephyrproject/zephyr/include/zephyr/linker/common-rom/common-rom-net.ld \
@@ -61,23 +61,23 @@ linker_zephyr_pre0.cmd: \
  C:/deviot/zephyrproject/zephyr/include/zephyr/linker/common-rom/common-rom-debug.ld \
  C:/deviot/zephyrproject/zephyr/include/zephyr/linker/common-rom/common-rom-interrupt-controllers.ld \
  C:/deviot/zephyrproject/zephyr/include/zephyr/linker/common-rom/common-rom-misc.ld \
- C:/deviot/dev_space/build/zephyr/include/generated/snippets-rom-sections.ld \
+ C:/deviot/zephyrproject/dev_space/build/zephyr/include/generated/snippets-rom-sections.ld \
  C:/deviot/zephyrproject/zephyr/include/zephyr/linker/thread-local-storage.ld \
- C:/deviot/dev_space/build/zephyr/include/generated/snippets-rodata.ld \
+ C:/deviot/zephyrproject/dev_space/build/zephyr/include/generated/snippets-rodata.ld \
  c:\deviot\zephyrproject\zephyr\arch\arm\core\swi_tables.ld \
  C:/deviot/zephyrproject/zephyr/include/zephyr/linker/kobject-rom.ld \
  C:/deviot/zephyrproject/zephyr/include/zephyr/linker/cplusplus-rom.ld \
- C:/deviot/dev_space/build/zephyr/include/generated/snippets-ram-sections.ld \
+ C:/deviot/zephyrproject/dev_space/build/zephyr/include/generated/snippets-ram-sections.ld \
  c:\deviot\zephyrproject\zephyr\modules\segger\segger_rtt.ld \
  c:\deviot\zephyrproject\zephyr\arch\common\ramfunc.ld \
- C:/deviot/dev_space/build/zephyr/include/generated/snippets-ramfunc-section.ld \
- C:/deviot/dev_space/build/zephyr/include/generated/snippets-rwdata.ld \
+ C:/deviot/zephyrproject/dev_space/build/zephyr/include/generated/snippets-ramfunc-section.ld \
+ C:/deviot/zephyrproject/dev_space/build/zephyr/include/generated/snippets-rwdata.ld \
  C:/deviot/zephyrproject/zephyr/include/zephyr/linker/common-ram.ld \
  C:/deviot/zephyrproject/zephyr/include/zephyr/linker/kobject-data.ld \
  C:/deviot/zephyrproject/zephyr/include/zephyr/linker/cplusplus-ram.ld \
- C:/deviot/dev_space/build/zephyr/include/generated/snippets-data-sections.ld \
- C:/deviot/dev_space/build/zephyr/include/generated/snippets-noinit.ld \
- C:/deviot/dev_space/build/zephyr/include/generated/snippets-sections.ld \
+ C:/deviot/zephyrproject/dev_space/build/zephyr/include/generated/snippets-data-sections.ld \
+ C:/deviot/zephyrproject/dev_space/build/zephyr/include/generated/snippets-noinit.ld \
+ C:/deviot/zephyrproject/dev_space/build/zephyr/include/generated/snippets-sections.ld \
  C:/deviot/zephyrproject/zephyr/include/zephyr/linker/intlist.ld \
  C:/deviot/zephyrproject/zephyr/include/zephyr/linker/ram-end.ld \
  C:/deviot/zephyrproject/zephyr/include/zephyr/linker/debug-sections.ld
