@@ -80,60 +80,66 @@ void main(void)
         k_msleep(500);
         printk("|   %s\n", rx_buffer);
         k_msleep(500);
-        uart_send_command(lora_uart, "AT+TEST=RXLRPKT\r\n");
-        k_msleep(500);
-        printk("|   %s\n", rx_buffer);
 
-        k_msleep(2000);
         printk("|-> Start to scan end node (LoRa)\n");
-
         for (double frequency = 915.200; frequency <= 918.200; frequency += 0.600)
         {
-            // ส่งคำสั่ง AT พร้อมความถี่ปัจจุบัน
+            printk("|   Current frequency %f\n", frequency);
+            k_msleep(1000);
+
             char command[128];
             snprintf(command, sizeof(command), "AT+TEST=RFCFG,%.3f,SF9,125,8,8,20,OFF,OFF,ON\r\n", frequency);
             uart_send_command(lora_uart, command);
-            printk("|-> Scan at frequency: %.3f\n", frequency);
-            k_msleep(500);
-
+            /*Open for debug code*/
+            // for (int i = 0; i < 10; i++)
+            // {
+            //     printk("Rx mode %s\n", rx_buffer);
+            //     k_msleep(200);
+            // }
+            k_msleep(1000);
+            uart_send_command(lora_uart, "AT+TEST=RXLRPKT\r\n");
+            /*Open for debug code*/
+            // for (int i = 0; i < 10; i++)
+            // {
+            //     printk("Rx mode %s\n", rx_buffer);
+            //     k_msleep(200);
+            // }
+            // k_msleep(500);
             int elapsed_time = 0; // ตัวจับเวลาที่ใช้ตรวจสอบในลูป while
-
             while (1)
             {
-                if (message_ready) // ตรวจสอบว่ามีข้อความใหม่ใน rx_buffer
+                k_msleep(500);
+                /*Open for debug code*/
+                // printk("|   %s\n", rx_buffer);
+
+                const char *substring = "4E4F44453"; /*find node keyword*/
+                if (strstr(rx_buffer, substring) != NULL)
                 {
-                    if (strstr(rx_buffer, "+TEST: RX") != NULL) // หากพบข้อความ "+TEST: RX"
+                    printk("|   Reciver %s Found!!\n", rx_buffer);
+                    if (frequency_count < MAX_FREQUENCIES) // ตรวจสอบว่าไม่เกินขนาดของลิสต์
                     {
-                        led_on();
-                        printk("|   Found!\n");
-                        if (frequency_count < MAX_FREQUENCIES) // ตรวจสอบว่าไม่เกินขนาดของลิสต์
-                        {
-                            detected_frequencies[frequency_count++] = frequency; // บันทึกและเพิ่มตัวนับ
-                        }
-                        else
-                        {
-                            printk("Frequency list is full! Cannot save more frequencies.\n");
-                        }
-                        memset(rx_buffer, 0, sizeof(rx_buffer)); // เคลียร์ทุกบิตในบัฟเฟอร์
-                        break;                                   // ออกจากลูป while และเปลี่ยนความถี่
+                        detected_frequencies[frequency_count++] = frequency; // บันทึกและเพิ่มตัวนับ
                     }
-                    memset(rx_buffer, 0, sizeof(rx_buffer)); // เคลียร์ทุกบิตในบัฟเฟอร์
+                    else
+                    {
+                        printk("Frequency list is full! Cannot save more frequencies.\n");
+                    }
+                    uart_send_command(lora_uart, "AT+MODE=TEST\r\n");
+                    k_msleep(500);
+                    break;
                 }
-
-                k_msleep(10);       // ลดความถี่การวนลูป
-                elapsed_time += 10; // เพิ่มเวลาที่ใช้ไปในลูป
-
+                elapsed_time += 200;      // เพิ่มเวลาที่ใช้ไปในลูป
                 if (elapsed_time >= 1000) // หากครบ 3 วินาที
                 {
-                    printk("|       No RX message\n");
+                    printk("|   No RX message\n");
+                    uart_send_command(lora_uart, "AT+MODE=TEST\r\n");
+                    k_msleep(500);
                     break; // ออกจากลูป while และไปที่ความถี่ถัดไป
                 }
+                k_msleep(1000);
             }
-            led_off();
-            memset(rx_buffer, 0, sizeof(rx_buffer)); // เคลียร์ทุกบิตในบัฟเฟอร์
-            k_msleep(500);                           // หน่วงเวลา 500 มิลลิวินาทีก่อนเปลี่ยนความถี่
-            memset(rx_buffer, 0, sizeof(rx_buffer)); // เคลียร์ทุกบิตในบัฟเฟอร์
         }
+
         k_msleep(1000);
         if (frequency_count > 0)
         {
@@ -167,4 +173,5 @@ void main(void)
         printk("Hello test3");
         return;
     }
+
 }
